@@ -9,9 +9,9 @@
 /* Global Colors */
 :root { 
   --background-color: #ffffff; 
-  --default-color: #212529; 
-  --heading-color: #5d379f; 
-  --accent-color: #050327; 
+  --default-color: #4F42B5; 
+  --heading-color: #000080; 
+  --accent-color: #4F42B5; 
   --surface-color: #ffffff; 
   --contrast-color: #ffffff; 
 }
@@ -145,7 +145,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 90px;
   margin-right: 8px;
 }
 
@@ -448,7 +448,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: #ffffff;
-  background-color: #050327;
+  background-color: #4F42B5;
   font-size: 14px;
   position: relative;
 }
@@ -487,15 +487,15 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(#060606), transparent 50%);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: #060606;
   margin-right: 10px;
   transition: 0.3s;
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
+  color: #ff0000;
   border-color: var(--accent-color);
 }
 
@@ -757,7 +757,7 @@ section,
   padding-top: 140px;
   position: relative;
   overflow: hidden;
-  background-color: #031222;;
+  background-color: #4F42B5;;
   padding-bottom: 80px;
 }
 
@@ -951,6 +951,8 @@ section,
   text-transform: uppercase;
   margin-bottom: 15px;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin: 0 auto; 
+
 }
 
 .about .content h3 {
@@ -2980,9 +2982,3 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
