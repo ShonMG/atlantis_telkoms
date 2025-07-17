@@ -1,16 +1,17 @@
 
 /* Fonts */
-:root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Poppins",  sans-serif;
-  --nav-font: "Raleway",  sans-serif;
+:root { 
+  --default-font: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Orbitron", "Poppins", sans-serif;
+  --nav-font: "Rajdhani", "Raleway", sans-serif;
 }
+
 
 /* Global Colors */
 :root { 
   --background-color: #ffffff; 
   --default-color: #4F42B5; 
-  --heading-color: #000080; 
+  --heading-color: #0606e8; 
   --accent-color: #4F42B5; 
   --surface-color: #ffffff; 
   --contrast-color: #ffffff; 
@@ -145,7 +146,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 90px;
+  max-height: 100px;
   margin-right: 8px;
 }
 
