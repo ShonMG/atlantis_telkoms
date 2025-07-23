@@ -26,6 +26,15 @@
   --nav-dropdown-color: #3a3939; 
   --nav-dropdown-hover-color: #5d57f4; 
 }
+/*Form Colors*/
+:root {
+  --navy: #001f3f;
+  --navy-light: #003366;
+  --navy-dark: #000c1f;
+  --white: #ffffff;
+  --gray-light: #f8f9fa;
+  --accent: #0d6efd;
+}
 
 /* Color Presets */
 
@@ -77,57 +86,7 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
 
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -560,16 +519,17 @@ h6 {
   margin-top: 8px;
   font-size: 13px;
 }
-.background-iframe {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      z-index: -1; /* Send it to the background */
-      pointer-events: none; /* Allow clicks to pass through */
-    }
+.faq-contact-card iframe.background-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: -1;
+    pointer-events: none;
+    filter: brightness(65%); /* Optional: darken for contrast */
+  }
 
 /*--------------------------------------------------------------
 # Preloader
@@ -1348,6 +1308,140 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Contact Form Styling
+--------------------------------------------------------------*/
+/* Modal Content Styling */
+#contactFormModal .modal-content {
+  background-color: var(--navy);
+  color: var(--white);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: none;
+  z-index: 1055;
+  position: relative;
+}
+
+#contactFormModal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#contactFormModal .modal-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+#contactFormModal .btn-close {
+  background-color: var(--white);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+#contactFormModal .btn-close:hover {
+  opacity: 1;
+}
+
+/* Form Styling */
+#popupContactForm .input-group {
+  margin-bottom: 1.2rem;
+}
+
+#popupContactForm .input-group-text {
+  background-color: var(--navy-light);
+  color: var(--white);
+  border: 1px solid var(--navy-dark);
+  padding: 0.6rem 0.75rem;
+  border-right: none;
+}
+
+#popupContactForm .form-control,
+#popupContactForm textarea.form-control {
+  background-color: var(--navy-dark);
+  color: var(--white);
+  border: 1px solid var(--navy-light);
+  border-left: none;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+#popupContactForm .form-control::placeholder,
+#popupContactForm textarea::placeholder {
+  color: #cccccc;
+}
+
+/* Button Styling */
+#popupContactForm .btn-success {
+  background-color: var(--accent);
+  border: none;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border-radius: 50px;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+#popupContactForm .btn-success:hover {
+  background-color: #0b5ed7;
+}
+
+/* Feedback messages */
+#popupContactForm .loading,
+#popupContactForm .error-message,
+#popupContactForm .sent-message {
+  display: none;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+#popupContactForm .loading {
+  color: var(--accent);
+}
+
+#popupContactForm .error-message {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+#popupContactForm .sent-message {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  #contactFormModal .modal-dialog {
+    max-width: 95%;
+    margin: 1.75rem auto;
+  }
+
+  #popupContactForm .form-group {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #popupContactForm .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #popupContactForm .input-group-text {
+    border-right: 1px solid var(--navy-light);
+    border-radius: 0.375rem 0.375rem 0 0;
+  }
+
+  #popupContactForm .form-control {
+    border-left: 1px solid var(--navy-light);
+    border-radius: 0 0 0.375rem 0.375rem;
+  }
+}
+
+/*--------------------------------------------------------------
 # Services Alt Section
 --------------------------------------------------------------*/
 .services-alt .content-block {
@@ -1987,6 +2081,10 @@ section,
   flex-direction: column;
   color: var(--contrast-color);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  
 }
 
 .faq .faq-contact-card .card-icon {
@@ -2634,4 +2732,8 @@ section,
   margin: 0 0 15px 0 0 0;
   padding: 0;
 }
+ .error-message {
+      color: red;
+      display: none;
+    }
 

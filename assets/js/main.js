@@ -205,3 +205,35 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+/**Contact Form */
+document.getElementById('popupContactForm').addEventListener('submit', function (e) {
+    const form = e.target;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+
+    let isValid = true;
+    let errorMessage = "";
+
+    if (!name || !email || !phone || !subject || !message) {
+      isValid = false;
+      errorMessage = "Please fill in all required fields.";
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      isValid = false;
+      errorMessage = "Please enter a valid email address.";
+    } else if (!/^[0-9\-\+\s\(\)]{7,}$/.test(phone)) {
+      isValid = false;
+      errorMessage = "Please enter a valid phone number.";
+    }
+
+    if (!isValid) {
+      e.preventDefault();
+      form.querySelector('.error-message').textContent = errorMessage;
+      form.querySelector('.error-message').style.display = 'block';
+    } else {
+      form.querySelector('.error-message').style.display = 'none';
+    }
+  });
